@@ -18,18 +18,18 @@
  Output: 7 -> 0 -> 8 
  */
 
-class ListNode {
-    var value: Int
-    var next: ListNode?
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
 
-    init(nodeValue: Int, nodeNext: ListNode?) {
-        self.value = nodeValue
-        self.next = nodeNext
+    public init(_ val: Int) {
+        self.val = val
+        self.next = nil
     }
 }
 
 func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-    let dummyHead = ListNode(nodeValue: 0, nodeNext: nil)
+    let dummyHead = ListNode(0)
     var tmp1: ListNode? = l1
     var tmp2: ListNode? = l2
     var curr = dummyHead
@@ -39,30 +39,30 @@ func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         sum /= 10
         
         if let n = tmp1 {
-            sum += n.value
+            sum += n.val
             tmp1 = n.next
         }
         
         if let n = tmp2 {
-            sum += n.value
+            sum += n.val
             tmp2 = n.next
         }
         
-        curr.next = ListNode(nodeValue: sum % 10, nodeNext: nil)
+        curr.next = ListNode(sum % 10)
         if let n = curr.next {
             curr = n
         }
     }
     
     if sum / 10 == 1 {
-        curr.next = ListNode(nodeValue: 1, nodeNext: nil)
+        curr.next = ListNode(1)
     }
     
     return dummyHead.next
 }
 
-let l1 = ListNode(nodeValue: 6, nodeNext: nil)
-let l2 = ListNode(nodeValue: 7, nodeNext: nil)
+let l1 = ListNode(6)
+let l2 = ListNode(7)
 addTwoNumbers(l1, l2)
 
 /*:

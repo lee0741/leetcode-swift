@@ -3,5 +3,7 @@
     <pages>
         <page name='001 Two Sum'/>
         <page name='002 Add Two Numbers'/>
+        <page name='003 Longest Substring Without Repeating Characters'/>
+        <page name='004 Median of Two Sorted Arrays'/>
     </pages>
 </playground>
